@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import requests
 from bs4 import BeautifulSoup
 import nltk
@@ -78,7 +77,7 @@ if url_input:
         st.write(text[:500])  # Display first 500 characters
 
 # Text analysis section
-if text:
+if 'text' in locals():
     # Preprocessing
     tokens = preprocess_text(text)
     token_freq = nltk.FreqDist(tokens)
@@ -113,7 +112,7 @@ if text:
 
     # Export analysis results
     st.sidebar.header('Export Analysis Results')
-    export_format = st.sidebar.selectbox('Select Export Format', ['CSV', 'JSON', 'Excel'])
+    export_format = st.sidebar.selectbox('Select Export Format', ['CSV', JSON, 'Excel'])
     export_button = st.sidebar.button('Export')
 
     if export_button:
