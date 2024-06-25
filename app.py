@@ -7,7 +7,6 @@ import spacy
 from nltk.corpus import stopwords
 from gensim import corpora, models
 import plotly.express as px
-import plotly.graph_objs as go
 from wordcloud import WordCloud
 
 nltk.download('stopwords')
@@ -112,7 +111,7 @@ if 'text' in locals():
 
     # Export analysis results
     st.sidebar.header('Export Analysis Results')
-    export_format = st.sidebar.selectbox('Select Export Format', ['CSV', JSON, 'Excel'])
+    export_format = st.sidebar.selectbox('Select Export Format', ['CSV', 'JSON', 'Excel'])
     export_button = st.sidebar.button('Export')
 
     if export_button:
